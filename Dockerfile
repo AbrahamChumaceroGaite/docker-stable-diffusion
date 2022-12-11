@@ -19,8 +19,7 @@ RUN pip3 install https://github.com/C43H66N12O12S2/stable-diffusion-webui/releas
 
 
 ## Install stable-diffusion-webui
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git sd
-    && rsync -av sd/ . && rm -rf sd
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git sd && rsync -av sd/ . && rm -rf sd
 
 
 EXPOSE 7860
