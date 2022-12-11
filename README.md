@@ -45,7 +45,7 @@ docker build --no-cache -t stable-diffusion-ui .
 
 ## Run Docker Container
 cd $HOME/sd-webui/
-docker run --rm -p 7860:7860 -v $(pwd):/opt/sd-webui --gpus all stable-diffusion-ui
+docker run --rm -p 7860:7860 -v $(pwd):/home/webui --gpus all stable-diffusion-ui
 ## http://127.0.0.1:7860
 ```
 
