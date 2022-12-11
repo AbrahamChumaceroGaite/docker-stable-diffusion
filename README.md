@@ -43,7 +43,7 @@ docker build --no-cache -t stable-diffusion-ui .
 
 ## Run Docker Container
 cd $HOME/stable-diffusion-webui/
-docker run --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffusion --gpus all stable-diffusion-ui
+docker run --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffusion -v $(pwd)/venv:/opt/sd-webui/venv --gpus all stable-diffusion-ui
 ```
 
 
@@ -52,3 +52,7 @@ docker run --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffus
 - https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features
 - https://github.com/NVIDIA/nvidia-docker
 - https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
+- https://www.youtube.com/watch?v=vg8-NSbaWZI
+- https://github.com/cmdr2/stable-diffusion-ui/wiki/Writing-prompts#negative-prompts
+- https://playgroundai.com/
+- https://lexica.art/
