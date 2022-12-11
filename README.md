@@ -11,8 +11,8 @@ DIST=ubuntu22.04
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
 curl -sLO https://nvidia.github.io/libnvidia-container/${DIST}/libnvidia-container.list
 sed -i 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' libnvidia-container.list
-sudo mv nvidia-container-toolkit.list /etc/apt/sources.list.d/nvidia-container-toolkit.list
-sudo apt-get install -y nvidia-docker2
+sudo mv nvidia-container-toolkit.list /etc/apt/sources.list.d/
+sudo apt-get update && apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 
 ## At this point, a working setup can be tested by running a base CUDA container:
