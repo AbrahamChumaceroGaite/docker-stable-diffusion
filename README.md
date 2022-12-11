@@ -25,25 +25,26 @@ sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 
 ```
 ## Create local folder
-mkdir -p $HOME/stable-diffusion-webui/models
+mkdir -p $HOME/sd-webui/
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git .
 
-## Move 768-v-ema.ckpt to $HOME/stable-diffusion-webui/models/
+## Move 768-v-ema.ckpt to $HOME/sd-webui/models/Stable-diffusion/
 
 ## Download Config
-cd $HOME/stable-diffusion-webui/
-curl -sL -o models/768-v-ema.yaml https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference-v.yaml
+cd $HOME/sd-webui/models/Stable-diffusion
+curl -sL -o 768-v-ema.yaml https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference-v.yaml
 ```
 
 ### Build Docker Container
 ```
-cd $HOME/stable-diffusion-webui/
-git clone https://github.com/jniltinho/docker-stable-diffusion.git
-cd docker-stable-diffusion
+cd $HOME/sd-webui/
+git clone https://github.com/jniltinho/docker-stable-diffusion.git docker-sd
+cd docker-sd
 docker build --no-cache -t stable-diffusion-ui .
 
 ## Run Docker Container
-cd $HOME/stable-diffusion-webui/
-docker run --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffusion -v $(pwd)/venv:/opt/sd-webui/venv --gpus all stable-diffusion-ui
+cd $HOME/sd-webui/
+docker run --rm -p 7860:7860 -v $(pwd):/opt/sd-webui --gpus all stable-diffusion-ui
 ```
 
 
