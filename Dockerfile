@@ -5,7 +5,7 @@ ENV SHELL /bin/bash
 
 
 # docker build --no-cache -t stable-diffusion-ui .
-# docker run -it --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffusion --gpus all stable-diffusion-ui bash
+# docker run --rm -p 7860:7860 -v $(pwd):/opt/sd-webui --gpus all stable-diffusion-ui
 
 WORKDIR /opt/sd-webui
 
