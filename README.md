@@ -30,8 +30,8 @@ mkdir -p $HOME/stable-diffusion-webui/models
 ## Move 768-v-ema.ckpt to $HOME/stable-diffusion-webui/models/
 
 ## Download Config
-cd $HOME/stable-diffusion-webui/models/
-curl -sL -o 768-v-ema.yaml https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference-v.yaml
+cd $HOME/stable-diffusion-webui/
+curl -sL -o models/768-v-ema.yaml https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-inference-v.yaml
 ```
 
 ### Build Docker Container
@@ -48,7 +48,7 @@ docker run --rm -p 7860:7860 -v $(pwd)/models:/opt/sd-webui/models/Stable-diffus
 
 
 ## Links
-- https://github.com/NVIDIA/nvidia-docker
-- https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 - https://github.com/AUTOMATIC1111/stable-diffusion-webui
 - https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features
+- https://github.com/NVIDIA/nvidia-docker
+- https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
