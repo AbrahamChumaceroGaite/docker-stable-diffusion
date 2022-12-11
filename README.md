@@ -1,7 +1,7 @@
 # Run Docker Stable Diffsuion UI
 
 
-## Quick start (Ubuntu and LinuxMint 22.04)
+## Quick start (Ubuntu 22.04|Mint 22.04)
 
 ### Install NVIDIA Container Toolkit
 ```
