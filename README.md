@@ -1,5 +1,7 @@
 # Run Docker Stable Diffsuion UI
 
+![image](photo_sd-webui.jpg)
+
 
 ## Quick start (Ubuntu 22.04|Linux Mint)
 
