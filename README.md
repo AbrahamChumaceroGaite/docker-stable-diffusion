@@ -25,7 +25,8 @@ sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 
 ```
 ## Create local folder
-mkdir -p $HOME/sd-webui/
+mkdir -p $HOME/sd-webui
+cd $HOME/sd-webui
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git .
 
 ## Move 768-v-ema.ckpt to $HOME/sd-webui/models/Stable-diffusion/
