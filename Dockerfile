@@ -23,4 +23,4 @@ USER webui
 WORKDIR /home/webui
 
 EXPOSE 7860
-ENTRYPOINT ["python3", "launch.py", "--listen", "--xformers"]
+ENTRYPOINT ["python3", "launch.py", "--xformers"]
