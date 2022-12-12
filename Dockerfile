@@ -10,6 +10,12 @@ ENV SHELL /bin/bash
 # http://127.0.0.1:7860/
 
 
+## https://github.com/ochinchina/supervisord
+COPY --from=ochinchina/supervisord:latest /usr/local/bin/supervisord /usr/local/bin/supervisord
+
+## https://caddyserver.com/docs/quick-starts/reverse-proxy
+COPY --from=caddy:2.6.2 /usr/bin/caddy /usr/local/bin/caddy
+
 ## Install Base
 RUN apt-get update -qq && apt-get install -yqq wget curl git python3 python3-venv python3-pip libgl1-mesa-glx libglib2.0-0 \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archive/*.deb
@@ -22,5 +28,10 @@ RUN useradd -m webui -u 1000 && chown -R webui /home/webui && groupmod -n webui 
 USER webui
 WORKDIR /home/webui
 
-EXPOSE 7860
-ENTRYPOINT ["python3", "launch.py", "--xformers"]
+EXPOSE 8282
+#ENTRYPOINT ["python3", "launch.py", "--xformers"]
+
+
+# Copy across docker scripts
+COPY container-files /
+ENTRYPOINT ["/config/bootstrap.sh"]
