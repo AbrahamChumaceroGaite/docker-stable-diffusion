@@ -28,7 +28,7 @@ RUN useradd -m webui -u 1000 && chown -R webui /home/webui && groupmod -n webui 
 USER webui
 WORKDIR /home/webui
 
-EXPOSE 8282
+EXPOSE 80
 #ENTRYPOINT ["python3", "launch.py", "--xformers"]
 
 
